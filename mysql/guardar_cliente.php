@@ -70,8 +70,8 @@ print_r($_POST);
 	
 ?> 
 <br/>
-<form method="post" action="lista_clientes.php">
+<form method="post" action="lista_clientes.php" style="font-family: monospace; text-align:center;">
 			<?php
-					echo "<input type='submit' name='volver' value='Ver lista clientes'><br/><br/>"; 
+					echo "<input type='submit' style='font-family: monospace; text-align:center;' name='volver' value='Ver lista clientes'><br/><br/>"; 
 			?>
 </form>

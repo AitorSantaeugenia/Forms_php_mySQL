@@ -14,6 +14,6 @@
 	mysqli_close($conn);
 ?>
 
-<form method="post" action="lista_coches.php">
-						<input type="submit" name="Volver" value="Volver"><br/><br/> 
+<form method="post" action="lista_coches.php" style="text-align:center";>
+						<br/><input type="submit" name="Volver" value="Volver" style="font-family: monospace"><br/><br/> 
 </form>

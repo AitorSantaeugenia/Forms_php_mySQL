@@ -90,8 +90,8 @@
 	mysqli_close($conn);
 ?> 
 <br/>
-<form method="post" action="lista_coches.php">
+<form method="post" action="lista_coches.php" style="font-family: monospace; text-align:center;">
 			<?php
-					echo "<input type='submit' name='volver' value='Ver lista clientes'><br/><br/>"; 
+					echo "<input type='submit' name='volver' style='font-family: monospace; text-align:center;' value='Ver lista clientes'><br/><br/>"; 
 			?>
 </form>

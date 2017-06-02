@@ -16,11 +16,34 @@
 ?>
 
 <html>
+<head>
+	<style>
+		.tabla{
+			border:1px solid black;
+			padding: 3px;
+			font-family: monospace;
+			width:100%;
+		}
+		
+		.tabla td {
+			border:1px solid black;
+			margin: 0 auto;
+			text-align:center;
+		}
+		
+		.tabla a{
+			margin: 0 auto;
+			text-align:center;
+			text-decoration: none;
+		}
+		
+	</style>
+</head>
     <body>
-    <table style="border:1px solid black">
+    <table class="tabla">
         <thead>
 		
-            <tr>
+            <tr >
                 <td >ID</td>
                 <td>MARCA</td>
 				<td>MODELO</td>
@@ -63,9 +86,9 @@
     </table>
 	<br/>
 	<!-- FORM PER RETORNAR A LA PAGINA INICIAL -->
-			<form method="post" action="exercici_formulari.php">
+			<form method="post" action="exercici_formulari.php" style="text-align:center; font-family:monospace;">
 			<?php
-					echo "<input type='submit' name='volver' value='Volver a coches'><br/><br/>"; 
+					echo "<input type='submit' name='volver' style='font-family:monospace;' value='Volver a coches'><br/><br/>"; 
 			?>
 			</form>
     </body>

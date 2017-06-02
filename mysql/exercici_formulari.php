@@ -8,6 +8,27 @@
 			strong { 
 				font-size:22px;
 			}
+			
+			.formulari{
+				font-family:monospace;
+				margin:0 auto;
+			}
+			
+			.footer{
+				text-align:center;
+				border:1px solid black;
+			}
+			
+			.footer input{
+				font-family:monospace;
+			}			
+			.footer a{
+				font-family:monospace;
+				text-decoration:none;
+			}
+
+
+
 		</style>
 	<body>
 	<!-- 
@@ -43,31 +64,50 @@
 		?>
 	
 	<h1 style="text-align:Center"> Exercici#1 - FORM per SQL</h1><br/>
-			<form method="post" action="<?php echo $action; ?>">
-						Marca: <input type="text" name="marca" value="<?php if(isset($_GET["id"])) echo $value["marca"]; ?>" id="marca" maxlength="15"/><br>
-						Model: <input type="text" name="model" id="model" value="<?php if(isset($_GET["id"])) echo $value["model"]; ?>" maxlength="15"/><br>
+			<form method="post" class="formulari" action="<?php echo $action; ?>">
+					<div style="border: 1px solid black; text-align:center; padding-top:3%; padding-bottom:3%;";>
 						
-						Número de placa: <input type="text" name="nplaca" id="nplaca" value="<?php if(isset($_GET["id"])) echo $value["numPlaca"]; ?>" maxlength="10"/><br>
-						Número de portes: <input type="text" name="nportes" id="nportes" value="<?php if(isset($_GET["id"])) echo $value["numPuerta"]; ?>" maxlength="1"/><br>
-						Capota: <select name="capota" id="capota" value="<?php echo $value["descapotable"]; ?>"/>
+						Marca: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" style="margin: auto;" name="marca" value="<?php if(isset($_GET["id"])) echo $value["marca"]; ?>" id="marca" maxlength="15"/><br>
+						
+						Model: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="model" id="model" value="<?php if(isset($_GET["id"])) echo $value["model"]; ?>" maxlength="15"/><br>
+						
+						Número de placa: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="nplaca" id="nplaca" value="<?php if(isset($_GET["id"])) echo $value["numPlaca"]; ?>" maxlength="10"/><br>
+						
+						Número de portes: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="nportes" id="nportes" value="<?php if(isset($_GET["id"])) echo $value["numPuerta"]; ?>" maxlength="1"/><br>
+						
+						Capota: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<select name="capota" id="capota" width="173" style="width: 173px" value="<?php echo $value["descapotable"]; ?>"/>
 										 <option value="true">1</option>
 										 <option value="false">0</option>
 								</select><br/>
-						Terreno: <input type="text" name="tterreno" id="tterreno" value="<?php if(isset($_GET["id"])) echo $value["tipoTerreno"]; ?>" maxlength="10"/><br>
-						Automática: <select  name="automat" id="automat" value="<?php if(isset($_GET["id"])) echo $value["automatica"]; ?>"/>
+								
+						Terreno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="tterreno" id="tterreno" value="<?php if(isset($_GET["id"])) echo $value["tipoTerreno"]; ?>" maxlength="10"/><br>
+						
+						Automática: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<select  name="automat" width="173" style="width: 173px" id="automat" value="<?php if(isset($_GET["id"])) echo $value["automatica"]; ?>"/>
 										 <option value="true">1</option>
 										 <option value="false">0</option>
 									</select><br/>
-						Potencia: <input type="text" name="potencia" id="potencia" maxlength="4" value="<?php if(isset($_GET["id"])) echo $value["potencia"]; ?>"/><br>
-						
+									
+						Potencia: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="potencia" id="potencia" maxlength="4" value="<?php if(isset($_GET["id"])) echo $value["potencia"]; ?>"/><br>
+					</div>
 											
 							<?php
 
 							
 							?>
-						<br/><br/><input type="submit" name="Enviar" value="<?php echo $nombreBoton;?>">
+					<div class="footer">
+						<br/><br/>
+						<input type="submit" name="Enviar" value="<?php echo $nombreBoton;?>"><br/><br/>
 						<a href="lista_coches.php">Lisa de coches</a><br/> <br/> 
 						<a href="index.html">Volver al menu</a><br/> <br/> 
+					</div>
 			</form>
 
 	</body>

@@ -40,23 +40,14 @@
 	echo "Terreno: ".$miCoche->getTerreno()."<br/>";
 	echo "És descapotable?: ".$miCoche->getisdescapotable()."<br/>";
 	*/
+	
+
 	?>
 	
 	<?php
 	//------------------------------------------------------------
 	
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "concesionario";
-
-
-	$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-	// comprovar conexió
-	if (!$conn){
-		die("Connection failed: " . mysqli_connect_error());
-	}
+	include("conexion_php.php");
 
 	
 	//UPDATE clientes SET direccion = pie2, direccion = 'pie2' WHERE id = 1;
@@ -86,10 +77,14 @@
 		print_r($item);
 		echo "<br>"; 
 	}
+	
+	//----------------------------------------------------------------------
+		//----------------------------------------------------------------------
 
 	mysqli_close($conn);
 ?> 
 <br/>
+
 <form method="post" action="lista_coches.php" style="font-family: monospace; text-align:center;">
 			<?php
 					echo "<input type='submit' name='volver' style='font-family: monospace; text-align:center;' value='Ver lista clientes'><br/><br/>"; 

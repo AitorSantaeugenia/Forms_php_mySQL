@@ -1,6 +1,6 @@
 <?php
 	include("conexion_php.php");
-	
+	include("session_idioma.php");
 	$sql="DELETE FROM coches WHERE id = ".$_GET["id"];
 
 	$resultado = mysqli_query($conn,$sql);
@@ -8,7 +8,7 @@
 	if (!$resultado) {
 		die('Eliminación incorrecta: ' . mysqli_error());
 	}else{
-		echo "Se ha eliminado correctamente el cliente con id.".$_GET["id"];
+		echo FRASEELIMINARCOCHE.$_GET["id"];
 	}
 	
 	mysqli_close($conn);

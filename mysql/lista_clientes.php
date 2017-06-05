@@ -11,7 +11,9 @@
 		die('Consulta no válida: ' . mysqli_error());
 	}
 
-	
+	//----------------------------------------------------------------------
+	include("session_idioma.php");
+	//----------------------------------------------------------------------
 	
 ?>
 
@@ -40,14 +42,24 @@
 		</style>
 	</head>
     <body>
+	<div class="header">
+			<form method="post" action="lista_clientes.php" style="text-align:right; font-family:monospace";>
+				<?php echo SELECTLANG; ?><select  name="idioma" width="173" style="width: 173px" id="idioma" onChange="document.location.href='lista_clientes.php?idioma=' + this.value" />
+										 <option value="es" <?php if(isset($_SESSION['idioma']) && $_SESSION['idioma'] == "es") echo "selected"; ?>><?php echo NOMIDIOMAUN; ?></option>
+										 <option value="ca" <?php if(isset($_SESSION['idioma']) && $_SESSION['idioma'] == "ca") echo "selected"; ?> ><?php echo NOMIDIOMADOS; ?></option>
+										 <option value="en" <?php if(isset($_SESSION['idioma']) && $_SESSION['idioma'] == "en") echo "selected"; ?> ><?php echo NOMIDIOMATRES; ?></option>
+				</select><br/>
+			</form>
+	</div>
+	
 	<table class="tabla">
         <thead>
 		
             <tr>
                 <td >ID</td>
-                <td>NOMBRE</td>
-				<td>APELLIDO</td>
-				<td>DNI</td>
+                <td><?php echo NAMETAB; ?></td>
+				<td><?php echo SURNAMETAB; ?></td>
+				<td><?php echo DNITAB; ?></td>
             </tr>
         </thead>
 		
@@ -61,8 +73,8 @@
             <td><?php echo $item['nombre']?></td>
 			<td><?php echo $item['apellido']?></td>
 			<td><?php echo $item['dni']?></td>
-			<td><?php echo "<a href='eliminar_cliente.php?id=". $item['id']."'>Eliminar</a><br/> <br/> ";?></td>
-			<td><?php echo "<a href='exercici_formulari_clientes.php?id=". $item['id']."'>Update</a><br/> <br/> ";?></td>
+			<td><?php echo "<a href='eliminar_cliente.php?id=". $item['id']."'>".ELIMINAR."</a><br/> <br/> ";?></td>
+			<td><?php echo "<a href='exercici_formulari_clientes.php?id=". $item['id']."'>".UPDATE."</a><br/> <br/> ";?></td>
 			
           </tr>
         <?php
@@ -76,7 +88,7 @@
 	<!-- FORM PER RETORNAR A LA PAGINA INICIAL -->
 			<form method="post" action="exercici_formulari_clientes.php" style="text-align:center; font-family:monospace;">
 			<?php
-					echo "<input type='submit' name='volver' style='font-family:monospace;' value='Volver a clientes'><br/><br/>"; 
+					echo "<input type='submit' name='volver' style='font-family:monospace;' value='".RETURNCLIE."'><br/><br/>"; 
 			?>
 			</form>
     </body>

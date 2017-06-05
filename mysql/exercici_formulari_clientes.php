@@ -37,7 +37,9 @@
 	-->
 	<?php
 	include("conexion_php.php");
-			
+	include("session_idioma.php");
+	
+	$value=NULL;
 		if(isset($_GET["id"]) && (int)$_GET["id"]>0)
 		{
 			$sql="SELECT * FROM clientes WHERE id = ".$_GET["id"];
@@ -50,28 +52,37 @@
 			}
 			
 			$action= "update_cliente.php?id=".$_GET['id'];
-			$nombreBoton="MODIFICAR";
+			$nombreBoton=MODIFICA;
 		}else
 		{
 			$action="guardar_cliente.php";
-			$nombreBoton="GUARDAR";
+			$nombreBoton=GUARDA;
 		}
 		
+		//----------------------------------------------------------------------
+		
+		
+		//print_r($_SESSION['idioma']);
+		//----------------------------------------------------------------------
+		
 	?>
-	<h1 style="text-align:Center"> Exercici#1 - FORM per SQL</h1><br/>
+	<h1 style="text-align:Center"> <?php echo TITLE; ?></h1><br/>
+	<?php
+		include("div_header_lang.php");
+	?>
 			<form method="post" class="formulari" action="<?php echo $action; ?>">
 			
 				<div style="border: 1px solid black; text-align:center; padding-top:3%; padding-bottom:3%;";>
-						Nombre: &nbsp;&nbsp;&nbsp;<input type="text" name="nombre" id="nombre" value="<?php if(isset($_GET["id"])) echo $value["nombre"]; ?>" maxlength="15"/><br>
-						Apellidos: <input type="text" name="apellidos" value="<?php if(isset($_GET["id"])) echo $value["apellido"]; ?>" id="apellidos" maxlength="25"/><br>
-						DNI: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="dni" id="dni" value="<?php if(isset($_GET["id"])) echo $value["dni"]; ?>" maxlength="9"/><br>
+						<?php echo NAME; ?> &nbsp;&nbsp;&nbsp;<input type="text" name="nombre" id="nombre" value="<?php if(isset($value))  echo $value["nombre"]; ?>" maxlength="15"/><br>
+						<?php echo SURNAME; ?> <input type="text" name="apellidos" value="<?php if(isset($value))  echo $value["apellido"]; ?>" id="apellidos" maxlength="25"/><br>
+						<?php echo DNI; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="dni" id="dni" value="<?php if(isset($value))  echo $value["dni"]; ?>" maxlength="9"/><br>
 				</div>			
 				<div class="footer">
 					<br/>
 						<input type="submit" name="Enviar" value="<?php echo $nombreBoton;?>"><br/><br/> 
 						
-						<a href="lista_clientes.php">Lisa de clientes</a><br/> <br/> 
-						<a href="index.html">Volver al menu</a><br/> <br/> 
+						<a href="lista_clientes.php"><?php echo ENLLASCLIENT; ?></a><br/> <br/> 
+						<a href="index.php"><?php echo BACKTOMENU; ?></a><br/> <br/> 
 				</div>
 			</form>
 			

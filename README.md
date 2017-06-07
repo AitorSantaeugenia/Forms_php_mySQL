@@ -9,3 +9,6 @@ Formularios con PHP y MySQL coches/clientes
 - $_POST, $_GET, $_SESSION
 
 Y más.
+
+- Segundo ejercicio sobre una PROTECTORA DE ANIMALES
+  - Selecciona animal y adoptalo, en MySQL y PHP
